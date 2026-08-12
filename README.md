@@ -3,7 +3,7 @@
 A [Trusted Web Activity](https://developer.chrome.com/docs/android/trusted-web-activity/overview/)
 wrapper around [Vault](https://github.com/YasinAdn/password-manager), a
 self-hosted, client-encrypted password manager. This repo doesn't contain a
-separate app — it packages the live web app (https://passten.vercel.app) so it
+separate app — it packages the live web app (https://mynexvault.vercel.app) so it
 installs and runs like a native Android app, with no browser chrome. Any
 change pushed to the [web app repo](https://github.com/YasinAdn/password-manager)
 shows up here automatically, with no rebuild required — see
@@ -17,7 +17,7 @@ Download `Vault.apk` and open it on your phone (you'll need to allow "install
 unknown apps" for whichever app you used to download it — Chrome, Files,
 etc.). Distributed directly via GitHub Releases rather than the Play Store.
 
-This APK connects to my own hosted instance (https://passten.vercel.app) —
+This APK connects to my own hosted instance (https://mynexvault.vercel.app) —
 installing it means your account and vault live on my Supabase project, not
 a private deployment of your own.
 
@@ -121,7 +121,7 @@ needed there either. The web app itself is fully domain-agnostic already
 
 - [password-manager](https://github.com/YasinAdn/password-manager) — the web
   app this wraps.
-- [Live app](https://passten.vercel.app)
+- [Live app](https://mynexvault.vercel.app)
 
 ## License
 

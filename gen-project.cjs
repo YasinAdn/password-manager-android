@@ -16,7 +16,7 @@ const {
 );
 
 const MANIFEST_URL =
-  process.env.TWA_MANIFEST_URL || "https://passten.vercel.app/manifest.json";
+  process.env.TWA_MANIFEST_URL || "https://mynexvault.vercel.app/manifest.json";
 const TARGET_DIR = __dirname;
 
 async function main() {

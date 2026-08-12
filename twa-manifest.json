@@ -1,6 +1,6 @@
 {
   "packageId": "app.vercel.vault_yasinadnan.twa",
-  "host": "passten.vercel.app",
+  "host": "mynexvault.vercel.app",
   "name": "Vault — Password Manager",
   "launcherName": "Vault",
   "display": "standalone",
@@ -13,7 +13,7 @@
   "backgroundColor": "#0F3D34",
   "enableNotifications": true,
   "startUrl": "/",
-  "iconUrl": "https://passten.vercel.app/icons/icon-512.png",
+  "iconUrl": "https://mynexvault.vercel.app/icons/icon-512.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
     "path": "D:\\Website work\\password-manager-android\\android.keystore",
@@ -23,7 +23,7 @@
   "appVersionCode": 1,
   "shortcuts": [],
   "generatorApp": "unknown",
-  "webManifestUrl": "https://passten.vercel.app/manifest.json",
+  "webManifestUrl": "https://mynexvault.vercel.app/manifest.json",
   "fallbackType": "customtabs",
   "features": {},
   "alphaDependencies": {
@@ -32,7 +32,7 @@
   "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
-  "fullScopeUrl": "https://passten.vercel.app/",
+  "fullScopeUrl": "https://mynexvault.vercel.app/",
   "minSdkVersion": 21,
   "orientation": "default",
   "fingerprints": [],
