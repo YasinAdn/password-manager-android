@@ -1,7 +1,11 @@
 // Re-syncs the Android project's native resources (splash screen,
 // status-bar color, etc.) from the current live web manifest -- e.g. after
-// changing manifest.json's theme_color/background_color. Does NOT touch
-// the existing signing key.
+// changing manifest.json's theme_color/background_color, OR after the web
+// app's domain has changed. Does NOT touch the existing signing key.
+//
+// Usage:
+//   node regen-project.cjs
+//   TWA_MANIFEST_URL="https://new-domain.com/manifest.json" node regen-project.cjs
 const path = require("path");
 const {
   TwaManifest,
@@ -12,7 +16,8 @@ const {
   "C:\\Users\\muhammad_yasin\\AppData\\Roaming\\npm\\node_modules\\@bubblewrap\\cli\\node_modules\\@bubblewrap\\core",
 );
 
-const MANIFEST_URL = "https://passten.vercel.app/manifest.json";
+const MANIFEST_URL =
+  process.env.TWA_MANIFEST_URL || "https://passten.vercel.app/manifest.json";
 const TARGET_DIR = __dirname;
 
 async function main() {

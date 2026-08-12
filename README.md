@@ -73,19 +73,34 @@ publish an update under the same app identity again).
 
 ### Changing the target domain
 
-Don't hand-edit `app/build.gradle` — it's generated. Update
-`MANIFEST_URL` in `regen-project.cjs` (it fetches the *live* web app's
-manifest to regenerate the whole native project) and re-run:
+An Android TWA's target domain is a real security binding, not a config
+value the app looks up at runtime — Android verifies it against the
+signed app's declared origin via Digital Asset Links, which requires it
+to be baked into the compiled app. That's inherent to the platform, not
+a limitation of this code, so a domain change always needs a rebuild —
+but the rebuild itself is a single parameterized command, not a
+multi-file hand-edit:
 
 ```
-node regen-project.cjs
+TWA_MANIFEST_URL="https://new-domain.com/manifest.json" node regen-project.cjs
+bubblewrap build
 ```
 
-`regen-project.cjs` pins `packageId` to `app.vercel.vault_yasinadnan.twa`
-regardless of what the fetched manifest implies — the package ID is baked
-into `assetlinks.json` on the web app and into the signed key's identity, so
+Don't hand-edit `app/build.gradle` — it's generated.  `regen-project.cjs`
+fetches the *live* web app's manifest from `TWA_MANIFEST_URL` (defaults to
+the current domain if unset) to regenerate the whole native project, and
+pins `packageId` to `app.vercel.vault_yasinadnan.twa` regardless of what
+the fetched manifest implies — the package ID is baked into
+`assetlinks.json` on the web app and into the signed key's identity, so
 letting it drift would silently break Digital Asset Link verification and
 orphan any already-installed APK under a different package.
+
+One thing that does *not* need to change: `assetlinks.json` on the web app
+lists the package name and signing fingerprint, neither of which depends
+on the domain — so as long as it's served at
+`/.well-known/assetlinks.json` on whatever the new domain is, no edit is
+needed there either. The web app itself is fully domain-agnostic already
+(see its own README) — only this repo's compiled APK needs the rebuild.
 
 ## Project layout
 
