@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+
+# gradle / android build output
+.gradle
+build
+app/build
+*.apk
+*.apk.idsig
+*.aab
+
+# machine-specific
+local.properties
+
+# signing key -- never commit this, back it up separately
+*.keystore
+*.jks
+
+.DS_Store
