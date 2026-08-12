@@ -12,7 +12,7 @@ const {
   "C:\\Users\\muhammad_yasin\\AppData\\Roaming\\npm\\node_modules\\@bubblewrap\\cli\\node_modules\\@bubblewrap\\core",
 );
 
-const MANIFEST_URL = "https://vault-yasinadnan.vercel.app/manifest.json";
+const MANIFEST_URL = "https://passten.vercel.app/manifest.json";
 const TARGET_DIR = __dirname;
 
 async function main() {
@@ -20,6 +20,11 @@ async function main() {
   twaManifest.launcherName = "Vault";
   twaManifest.signingKey.path = path.join(TARGET_DIR, "android.keystore");
   twaManifest.signingKey.alias = "android";
+
+  // Package ID must stay pinned -- it's baked into assetlinks.json on the
+  // web app and into the signed keystore's identity. Changing it would
+  // break Digital Asset Link verification and orphan any installed APK.
+  twaManifest.packageId = "app.vercel.vault_yasinadnan.twa";
 
   console.log("themeColor:", twaManifest.themeColor.hex());
   console.log("backgroundColor:", twaManifest.backgroundColor.hex());

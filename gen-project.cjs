@@ -15,7 +15,7 @@ const {
   "C:\\Users\\muhammad_yasin\\AppData\\Roaming\\npm\\node_modules\\@bubblewrap\\cli\\node_modules\\@bubblewrap\\core",
 );
 
-const MANIFEST_URL = "https://vault-yasinadnan.vercel.app/manifest.json";
+const MANIFEST_URL = "https://passten.vercel.app/manifest.json";
 const TARGET_DIR = __dirname;
 
 async function main() {
