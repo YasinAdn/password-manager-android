@@ -107,3 +107,10 @@ orphan any already-installed APK under a different package.
 - [password-manager](https://github.com/YasinAdn/password-manager) — the web
   app this wraps.
 - [Live app](https://passten.vercel.app)
+
+## License
+
+[PolyForm Noncommercial 1.0.0](LICENSE). Free to use, fork, and self-host
+for any noncommercial purpose. Commercial use (selling it, offering it as a
+paid hosted service, bundling it into a paid product) requires a separate
+agreement — contact yasin.adnan@mynexsystems.com.
