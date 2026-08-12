@@ -17,6 +17,21 @@ Download `Vault.apk` and open it on your phone (you'll need to allow "install
 unknown apps" for whichever app you used to download it — Chrome, Files,
 etc.). Distributed directly via GitHub Releases rather than the Play Store.
 
+This APK connects to my own hosted instance (https://passten.vercel.app) —
+installing it means your account and vault live on my Supabase project, not
+a private deployment of your own.
+
+## Want your own instance?
+
+If you'd rather run a fully private Vault — your own Supabase project, your
+own data, nothing shared with anyone else's deployment — head to the
+[password-manager repo](https://github.com/YasinAdn/password-manager) and
+follow its README to deploy your own copy. It's a standard Next.js +
+Supabase app; the README walks through creating a Supabase project, running
+the schema, and deploying it. Once your own instance is live, this repo's
+`regen-project.cjs` (see below) can generate a TWA wrapper pointed at your
+own domain instead of mine.
+
 ## How it works
 
 A TWA is a thin native shell around Chrome that renders one specific web
